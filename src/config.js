@@ -101,10 +101,10 @@ export const PROFILE = {
       desc: "Desktop-OS portfolio you're... not on right now. Windows, taskbar, easter eggs (resume.krithiuk.space).",
       url: "https://resume.krithiuk.space",
     },
-    // Live URLs — deployed to Cloudflare Pages
-    { name: "collab-playground", desc: "Shared whiteboard + code editor, synced live via Yjs CRDTs.", url: "https://collab-playground.pages.dev" },
-    { name: "nebula", desc: "25k-particle WebGL galaxy with cursor gravity wells and mic-reactive mode.", url: "https://nebula-5d2.pages.dev" },
-    { name: "codebase-explorer", desc: "Paste any GitHub repo → interactive dependency graph. 100% client-side.", url: "https://codebase-explorer-ajn.pages.dev" },
+    // Live URLs — custom domains on Cloudflare Pages
+    { name: "collab-playground", desc: "Shared whiteboard + code editor, synced live via Yjs CRDTs.", url: "https://collab.krithiuk.space" },
+    { name: "nebula", desc: "25k-particle WebGL galaxy with cursor gravity wells and mic-reactive mode.", url: "https://nebula.krithiuk.space" },
+    { name: "codebase-explorer", desc: "Paste any GitHub repo → interactive dependency graph. 100% client-side.", url: "https://explorer.krithiuk.space" },
   ],
 
   resume: "resume.pdf", // lives in /public → served at /resume.pdf
