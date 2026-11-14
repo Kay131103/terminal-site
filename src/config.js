@@ -36,7 +36,7 @@ export const PROFILE = {
     {
       role: "Junior Software Developer",
       org: "EG India",
-      period: "Apr 2025 – Present",
+      period: "Apr 2025 – 30 Oct 2026",
       points: [
         "AI price-list extraction platform: resumable multi-stage document pipeline turning Danish construction price lists (VVS, masonry, painting) into structured, reviewable data — rendering, Claude vision extraction on AWS Bedrock, trade-specific prompts, dedup and job-stage controls.",
         "Improved extraction quality: grid-row number synthesis, collision handling, cross-reference price resolution, VVS surcharge classification; per-job Bedrock token & cost tracking.",
