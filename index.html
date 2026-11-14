@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krithi@terminal ~</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>" />
+    <style>
+      :root {
+        --bg: #0a0e14;
+        --window: #10141d;
+        --border: #1f2633;
+        --text: #c8d3e0;
+        --muted: #5d6b80;
+        --green: #7ee787;
+        --blue: #79c0ff;
+        --purple: #d2a8ff;
+        --yellow: #ffea7a;
+        --red: #ff7b72;
+        --accent: #7ee787;
+      }
+      body.purple { --accent: #d2a8ff; --green: #d2a8ff; }
+      body.amber  { --accent: #ffea7a; --green: #ffea7a; --blue: #ffab70; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: #05070b;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        font: 14px/1.55 "JetBrains Mono", "Fira Code", ui-monospace, "Cascadia Code", monospace;
+      }
+      .window {
+        width: min(920px, 100%);
+        height: min(640px, 100%);
+        background: var(--window);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .titlebar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        background: #0c1018;
+        border-bottom: 1px solid var(--border);
+      }
+      .dot { width: 12px; height: 12px; border-radius: 50%; }
+      .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+      .titlebar span { margin-left: 8px; color: var(--muted); font-size: 12px; }
+      .titlebar .ghost { margin-left: auto; color: var(--muted); font-size: 12px; }
+      #screen {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 16px;
+        color: var(--text);
+        cursor: text;
+      }
+      #screen::-webkit-scrollbar { width: 8px; }
+      #screen::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+      .line { white-space: pre-wrap; word-break: break-word; }
+      .g { color: var(--green); } .b { color: var(--blue); } .p { color: var(--purple); }
+      .y { color: var(--yellow); } .r { color: var(--red); } .m { color: var(--muted); }
+      .a { color: var(--accent); font-weight: 600; }
+      .input-line { display: flex; align-items: baseline; }
+      .prompt { color: var(--accent); white-space: pre; }
+      #input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text);
+        font: inherit;
+        caret-color: var(--accent);
+        padding: 0;
+      }
+      .banner { line-height: 1.25; }
+      .cmd-table td { padding: 1px 18px 1px 0; }
+      .boot { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div class="window">
+      <div class="titlebar">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <span>krithi@portfolio — zsh</span>
+        <div class="ghost">type `help` to get started</div>
+      </div>
+      <div id="screen">
+        <div class="input-line">
+          <span class="prompt"></span>
+          <input id="input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
