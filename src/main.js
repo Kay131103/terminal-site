@@ -214,7 +214,7 @@ function run(raw) {
       out(`  <span class="g">open ${esc(PROFILE.resume)}</span>`);
       break;
 
-    case "ls":
+  case "ls":
       out(Object.keys(FILES).map((f) => `<span class="b">${esc(f)}</span>`).join("   ") + `<span class="m">   ${esc(PROFILE.resume)}</span>`);
       break;
 
@@ -227,10 +227,13 @@ function run(raw) {
     }
 
     case "open": {
-      const urls = { github: PROFILE.github, linkedin: PROFILE.linkedin, resume: PROFILE.resume, website: PROFILE.website, os: PROFILE.website, "krithi.os": PROFILE.website };
+      const urls = { github: PROFILE.github, linkedin: PROFILE.linkedin, resume: PROFILE.resume, website: PROFILE.website, os: PROFILE.website, "krithi.os": PROFILE.website, links: "links.html" };
       const key = arg.toLowerCase().replace("./", "");
-      if (urls[key]) { out(`<span class="b">↗ opening ${esc(urls[key])}</span>`); window.open(key === "resume" ? "/" + urls[key] : urls[key], "_blank"); }
-      else out(`<span class="r">open:</span> unknown target ${esc(arg)} <span class="m">(try: github, linkedin, website, resume)</span>`);
+      if (urls[key]) {
+        const target = key === "resume" || key === "links" ? "/" + urls[key] : urls[key];
+        out(`<span class="b">↗ opening ${esc(target)}</span>`);
+        window.open(target, "_blank");
+      } else out(`<span class="r">open:</span> unknown target ${esc(arg)} <span class="m">(try: github, linkedin, website, resume, links)</span>`);
       break;
     }
 
